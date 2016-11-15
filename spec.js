@@ -21,11 +21,12 @@ describe('Navigation TODO', function() {
         browser.sleep(3000)
         expect(current.count() == cancel.count()).toBe(false)
     })
-        it('should cancel all task', function() {
-            browser.get(URL);
-            expect(browser.getTitle()).toBe('Angular2 Seed');
-            let allcancel = element.all(by.css('.todo-container [type="checkbox"]'));
-            expect(allcancel.count()).toBe(0)
+    it('should cancel all task', function() {
+        browser.get(URL);
+        expect(browser.getTitle()).toBe('Angular2 Seed');
+        let allcancel =  element.all(by.css('.todo-container [type="checkbox"]'));
+        allcancel.click();
+        expect(allcancel.count()).toBe(0)
 
-        })
     })
+})
